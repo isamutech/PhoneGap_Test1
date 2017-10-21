@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name = "viewport" content = "width = device-width, initial-scale = 1">
+      <link rel = "stylesheet" href = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+      <script src = "https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script src = "https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+   </head>
+    
+      <script>
+        $( document ).on( "pageinit", "#demo-page1", function() {
+    $( document ).on( "swipeleft swiperight", "#demo-page1", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#right-panel" ).panel( "open" );
+            } else if ( e.type === "swiperight" ) {
+                $( "#left-panel" ).panel( "open" );
+            }
+        }
+    });
+});
+
+      </script>
+
+
+      <script>
+        $( document ).on( "pageinit", "#demo-page2", function() {
+    $( document ).on( "swipeleft swiperight", "#demo-page2", function( e ) {
+        // We check if there is no open panel on the page because otherwise
+        // a swipe to close the left panel would also open the right panel (and v.v.).
+        // We do this by checking the data that the framework stores on the page element (panel: open).
+        if ( $.mobile.activePage.jqmData( "panel" ) !== "open" ) {
+            if ( e.type === "swipeleft"  ) {
+                $( "#right-panel" ).panel( "open" );
+            } else if ( e.type === "swiperight" ) {
+                $( "#left-panel" ).panel( "open" );
+            }
+        }
+    });
+});
+
+      </script>
+
+
+   <body >
+
+    <!--   <div class = "main">
+            
+              
+          
+         </div> -->
+  <div data-role="page" id="demo-page1" data-theme="d" >
+    <div data-role="header" data-theme="b">
+        <h1>Overview</h1>
+        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+        
+        
+    
+            <p> The Alchemist (Portuguese: O Alquimista) is a novel by Brazilian author Paulo Coelho which was first published in 1988. Originally written in Portuguese, it became an international bestseller translated into some 70 languages as of 2016.An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to Egypt, after having a recurring dream of finding treasure there.
+
+</p>
+<p><a href = "#demo-page2">click here</a></p>
+
+
+    <div data-role="panel" id="left-panel" >
+       <ul>
+          <li>The Alchemist</li>
+          <img src="alchemist.jpg" style="width:100px;height:100px">
+          <li>The WIngs Of Fire</li>
+             <img src="wof.jpeg" style="width:100px;height:100px">
+          <li>Twilight</li>
+             <img src="twil.jpg" style="width:100px;height:100px">
+          <li>3 Mistakes of my Life</li>
+             <img src="mol.jpeg" style="width:100px;height:100px">
+          <li>PS I Love You</li>
+             <img src="ilu.jpg" style="width:100px;height:100px">
+          <li>The notebook</li>
+             <img src="notebook.jpg" style="width:100px;height:100px">
+          <li>One night at a call center</li>
+             <img src="onc.jpeg" style="width:100px;height:100px">
+          <li>The Life of Pie</li>
+             <img src="lop.jpeg" style="width:100px;height:100px">
+          <li>Revolution 2020</li>
+             <img src="rev.jpg" style="width:100px;height:100px">
+        </ul>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel
+ -->
+    <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
+        <p>Right push panel.</p>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel -->
+</div>
+
+
+
+     <div data-role="page" id="demo-page2" data-theme="d" >
+    <div data-role="header" data-theme="b">
+        <h1>Overview</h1>
+        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+        
+        
+    
+            <p> The Alchemist (Portuguese: O Alquimista) is a novel by Brazilian author Paulo Coelho which was first published in 1988. Originally written in Portuguese, it became an international bestseller translated into some 70 languages as of 2016.An allegorical novel, The Alchemist follows a young Andalusian shepherd in his journey to Egypt, after having a recurring dream of finding treasure there.
+
+The story is a modern variant of the type The Man Who Became Rich Through a Dream (Aarne-Thompson-Uther type 1645). Over the years there have been film and theatrical adaptations of the work and musical interpretations of it.</p>
+
+            <p><a href = "#demo-page1">Back</a></p>
+
+    <div data-role="panel" id="left-panel" >
+       <ul>
+          <li>The Alchemist</li>
+          <li>The WIngs Of Fire</li>
+          <li>Twilight</li>
+          <li>3 Mistakes of my Life</li>
+          <li>PS I Love You</li>
+          <li>The notebook</li>
+          <li>One night at a call center</li>
+          <li>The Life of Pie</li>
+          <li>Revolution 2020</li>
+        </ul>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel
+ -->
+    <div data-role="panel" id="right-panel" data-display="push" data-position="right" data-theme="c">
+        <p>Right push panel.</p>
+        <a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+    </div><!-- /panel -->
+</div>
+
+
+
+
+      </div>
+      </div>
+   </body>
+</html>
